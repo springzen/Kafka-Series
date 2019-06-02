@@ -134,4 +134,10 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 
 #### Consumer Offsets
 
--
+- Kafka stores the offsets where a consumer group reads
+- think of this as checkpointing or bookmarking
+- the offsets are committed live in a Kafka topic named `__consumer_offsets`
+- when a consumer in a group has processed data received from Kafka, it should be committing the offsets
+- this is done because when a consumer quits unexpectedly, upon restart it will be able to read back from where it left off; thanks to the committed consumer offsets
+
+![Producers](KafkaConsumerOffsets.png)
