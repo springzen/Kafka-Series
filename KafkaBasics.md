@@ -15,7 +15,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 
 #### Offsets
 - an offset is bound to a specific partition; in other words an offset is bound to a specific partition
-- oder is guaranteed only within the partition but not across partitions
+- order is guaranteed only within the partition but not across partitions
 
 #### Data
 - is kept for a limited time (default is one week)
@@ -126,3 +126,12 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - If you have more consumers than partitions, some consumers will be inactive
 
 ![Producers](KafkaInactiveConsumers.png)
+
+- you usually add inactive/redundant consumers if you anticipate being shut down
+- usually you have as many consumers as there are partitions; this is why you need to make the partition decision ahead of time
+- if you plan to have a high number of consumers, you need to have a high number of partitions
+- in our example we have three partitions so we can only have up to 3 consumers
+
+#### Consumer Offsets
+
+-
