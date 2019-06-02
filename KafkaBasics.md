@@ -82,3 +82,41 @@
 **Note** The load is balanced to many brokers thanks to the number of partitions
 
 ![Producers](Kafka%20Producers.png)
+
+* producers can choose to receive acknowledgements of data writes (send modes below)
+ * `acks=0`: producer won't wait for acknowledgement (possible data loss)
+ * `acks=1`: producer will wait for leader acknowledgement (limited data loss) [default]
+ * `acks=all`: leader + replicas acknowledgement (no data loss)
+
+#### Producers: Message keys
+
+- producers can choose to send a **key** with the message (string, number, etc.)
+- if the key is not sent; if `key=null`, data is sent round robin (broker 101, then 102, then 103...)
+- if a key is sent, then all messages for that key will always go to the same partition (this is a Kafka guarantee)
+- a key is basically sent if you need message ordering for a specific field (ex: truck_id)
+- for example when sending
+ - key: truck_id_123 data will always be sent to partition 0
+ - key: truck_id_234 data will always be sent to partition 0
+ - key: truck_id_345 data will always be sent to partition 1
+ - key: truck_id_456 data will always be sent to partition 1
+- so we do not refer to which partition the key will go to, but it is guaranteed to go to the same partition
+- this is referred to as key hashing: an advanced topic and it depends on the number of partitions
+
+### Consumers
+
+- Consumers read data from a topic (identified by name)
+- Consumers know which broker to read from
+- In case of broker failures, consumers know how to recover
+- Data will be read in order **within each partition**
+
+![Producers](KafkaConsumers.png)
+
+#### Consumer groups
+
+- consumers read data in consumer groups
+- each consumer within a group reads from exclusive partitions
+- if you have more consumers than partitions, some consumers will be inactive
+
+![Producers](KafkaConsumerGroups.png)
+
+**Note:** Consumers will automatically use a GroupCoordinator and a ConsumerCoordinator to assign a consumer to a partition
