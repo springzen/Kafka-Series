@@ -81,7 +81,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 
 **Note** The load is balanced to many brokers thanks to the number of partitions
 
-![Producers](Kafka%20Producers.png)
+![Producers](KafkaProducers.png)
 
 * producers can choose to receive acknowledgements of data writes (send modes below)
  * `acks=0`: producer won't wait for acknowledgement (possible data loss)
