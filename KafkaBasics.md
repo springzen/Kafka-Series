@@ -1,5 +1,5 @@
 ## Kafka basics
-- based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginners
+_Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginners_
 
 ### Topics, partitions and offsets
 
@@ -120,3 +120,9 @@
 ![Producers](KafkaConsumerGroups.png)
 
 **Note:** Consumers will automatically use a GroupCoordinator and a ConsumerCoordinator to assign a consumer to a partition
+
+#### What if you have too many Consumers
+
+- If you have more consumers than partitions, some consumers will be inactive
+
+![Producers](KafkaInactiveConsumers.png)
