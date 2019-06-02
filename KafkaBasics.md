@@ -79,4 +79,6 @@
 - producers automatically know to which broker and partition to write to
 - in case of broker failures, Producers will automatically recover
 
-Inline-style: ![producers]: https://github.com/springzen/Kafka-Series/blob/master/Kafka%20Producers.png "Producers in action"
+**Note** The load is balanced to many brokers thanks to the number of partitions
+
+![Producers](Kafka%20Producers.png)
