@@ -81,7 +81,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 
 **Note** The load is balanced to many brokers thanks to the number of partitions
 
-![KafkaProducers](KafkaProducers.png)
+![KafkaProducers](images/KafkaProducers.png)
 
 * producers can choose to receive acknowledgements of data writes (send modes below)
  * `acks=0`: producer won't wait for acknowledgement (possible data loss)
@@ -109,7 +109,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - In case of broker failures, consumers know how to recover
 - Data will be read in order **within each partition**
 
-![KafkaConsumers](KafkaConsumers.png)
+![KafkaConsumers](images/KafkaConsumers.png)
 
 #### Consumer groups
 
@@ -117,7 +117,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - each consumer within a group reads from exclusive partitions
 - if you have more consumers than partitions, some consumers will be inactive
 
-![KafkaConsumerGroups](KafkaConsumerGroups.png)
+![KafkaConsumerGroups](images/KafkaConsumerGroups.png)
 
 **Note:** Consumers will automatically use a GroupCoordinator and a ConsumerCoordinator to assign a consumer to a partition
 
@@ -125,7 +125,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 
 - If you have more consumers than partitions, some consumers will be inactive
 
-![KafkaInactiveConsumers](KafkaInactiveConsumers.png)
+![KafkaInactiveConsumers](images/KafkaInactiveConsumers.png)
 
 - you usually add inactive/redundant consumers if you anticipate being shut down
 - usually you have as many consumers as there are partitions; this is why you need to make the partition decision ahead of time
@@ -140,7 +140,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - when a consumer in a group has processed data received from Kafka, it should be committing the offsets
 - this is done because when a consumer quits unexpectedly, upon restart it will be able to read back from where it left off; thanks to the committed consumer offsets
 
-![KafkaConsumerOffsets](KafkaConsumerOffsets.png)
+![KafkaConsumerOffsets](images/KafkaConsumerOffsets.png)
 
 #### Delivery semantics for consumers
 
@@ -162,7 +162,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - this means **you only need to connect to one broker** and you be connected to the entire cluster
 - each broker knows about all brokers, topics and partitions (metadata)
 
-![KafkaCluster](KafkaBrokerDiscovery.png)
+![KafkaCluster](images/KafkaBrokerDiscovery.png)
 
 ### Zookeeper
 
@@ -174,7 +174,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - Zookeeper has a leader (handles writes) the rest of the servers are followers (handle reads)
 - Zookeeper does not store consumer offsets with Kafka > v0.10
 
-![ZookeeperCluster](ZookeeperCluster.png)
+![ZookeeperCluster](images/ZookeeperCluster.png)
 
 ### Kafka Guarantees
 
@@ -188,4 +188,4 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 
 ### Theory Roundup
 
-![KafkaConcepts](AllKafkaConcepts.png)
+![KafkaConcepts](images/AllKafkaConcepts.png)
