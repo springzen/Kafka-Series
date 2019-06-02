@@ -81,7 +81,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 
 **Note** The load is balanced to many brokers thanks to the number of partitions
 
-![Producers](KafkaProducers.png)
+![KafkaProducers](KafkaProducers.png)
 
 * producers can choose to receive acknowledgements of data writes (send modes below)
  * `acks=0`: producer won't wait for acknowledgement (possible data loss)
@@ -109,7 +109,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - In case of broker failures, consumers know how to recover
 - Data will be read in order **within each partition**
 
-![Producers](KafkaConsumers.png)
+![KafkaConsumers](KafkaConsumers.png)
 
 #### Consumer groups
 
@@ -117,7 +117,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - each consumer within a group reads from exclusive partitions
 - if you have more consumers than partitions, some consumers will be inactive
 
-![Producers](KafkaConsumerGroups.png)
+![KafkaConsumerGroups](KafkaConsumerGroups.png)
 
 **Note:** Consumers will automatically use a GroupCoordinator and a ConsumerCoordinator to assign a consumer to a partition
 
@@ -125,7 +125,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 
 - If you have more consumers than partitions, some consumers will be inactive
 
-![Producers](KafkaInactiveConsumers.png)
+![KafkaInactiveConsumers](KafkaInactiveConsumers.png)
 
 - you usually add inactive/redundant consumers if you anticipate being shut down
 - usually you have as many consumers as there are partitions; this is why you need to make the partition decision ahead of time
@@ -140,4 +140,52 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 - when a consumer in a group has processed data received from Kafka, it should be committing the offsets
 - this is done because when a consumer quits unexpectedly, upon restart it will be able to read back from where it left off; thanks to the committed consumer offsets
 
-![Producers](KafkaConsumerOffsets.png)
+![KafkaConsumerOffsets](KafkaConsumerOffsets.png)
+
+#### Delivery semantics for consumers
+
+- consumers chose when to commit offsets
+- there are 3 delivery semantics
+- `at most once`
+ - offsets are committed as soon as the message is received
+ - if something goes wrong, the message will be lost (it won't be read again)
+- `at least once` (preferred)
+ - offsets are committed after the message is processed
+ - if something goes wrong, the message will be read again
+ - this can result in duplicate processing of messages. Make sure your processing is **idempotent** (i.e. subsequent message processing will not affect your systems)
+- `exactly once`
+ - can be achieved for Kafka to Kafka workflows using Kafka Streams API
+
+### Kafka Broker Discovery
+
+- every Kafka broker is also called a "bootstrap server"
+- this means **you only need to connect to one broker** and you be connected to the entire cluster
+- each broker knows about all brokers, topics and partitions (metadata)
+
+![KafkaCluster](KafkaBrokerDiscovery.png)
+
+### Zookeeper
+
+- Zookeeper manages brokers (keeps a list of them)
+- Zookeeper helps in performing leader election for partitions
+- Zookeeper sends notifications to Kafka in case of changes (e.g new topic, broker down, broker up, delete topics, etc.)
+- **Kafka cannot work without Zookeeper**
+- Zookeeper, by design, operates with an odd number of servers (3, 5, 7...)
+- Zookeeper has a leader (handles writes) the rest of the servers are followers (handle reads)
+- Zookeeper does not store consumer offsets with Kafka > v0.10
+
+![ZookeeperCluster](ZookeeperCluster.png)
+
+### Kafka Guarantees
+
+- Messages are appended to a topic partition in the order they are sent
+- Consumers read messages in the order stored in a topic-partition
+- With a replication factor of N, producers and consumers can tolerate up to N - 1 brokers being down
+- This is why a replication factor of 3 is a good idea:
+ - allows for one broker to be taken down for maintenance
+ - allows for another broker to be taken down unexpectedly
+- as long as the number of partitions remains constant for a topic (no new partitions), the same key will always go to the same partition
+
+### Theory Roundup
+
+![KafkaConcepts](AllKafkaConcepts.png)
