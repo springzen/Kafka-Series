@@ -56,15 +56,27 @@
 | Partition-0 Topic-A | Partition 1 Topic-A       | Repl: Partition 1 Topic-A |
 |                     | Repl: Partition 0 Topic-A |                           |
 
-```puml
-Broker_101 -> Broker_101 
-
-```
-
 
 - if we lose Broker 102
 - broker 101 and 103 can still serve the data
 
 ##### Concept of Leader for a Partition
 
--
+- only one broker can be a leader for a given partition
+- only that leader can receive and serve data for a partition
+- the other brokers will synchronize the data
+- therefore, each partition has one leader and multiple ISR (in-sync replica)
+
+| Broker 101                     |            Broker 102           |                      Broker 103 |
+|--------------------------------|:-------------------------------:|--------------------------------:|
+| * Partition-0 Topic-A (leader) | * Partition 1 Topic-A (Leader)  | Repl: Partition 1 Topic-A (ISR) |
+|                                | Repl: Partition 0 Topic-A (ISR) |                                 |
+
+### Producers
+
+- how do we get data into Kafka - enter the producers
+- producers write data to topics (which are made of topics)
+- producers automatically know to which broker and partition to write to
+- in case of broker failures, Producers will automatically recover
+
+Inline-style: ![producers]: https://github.com/springzen/Kafka-Series/blob/master/Kafka%20Producers.png "Producers in action"
