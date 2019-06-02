@@ -1,4 +1,5 @@
 ## Kafka basics
+- based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginners
 
 ### Topics, partitions and offsets
 
@@ -25,3 +26,22 @@
 ### Brokers
 
 - a Kafka cluster is composed of multiple brokers (servers)
+- each broker is identified by its ID (integer)
+- each broker contains certain topic partitions - but not all the data
+- after connecting to any broker (called a bootstrap broker), you will be connected to the entire cluster
+- a good number cluster number to start with is 3; some clusters can grow in the hundreds
+- to make it easy for growth, name clusters starting at 100 (example, 101, 102, 103)
+
+#### Brokers and Topics
+
+- example of Topic-A with 3 partitions
+- example of Topic-B with 2 partitions
+
+| Broker 101          |      Broker 102     |          Broker 103 |
+|---------------------|:-------------------:|--------------------:|
+| Topic-A Partition-0 | Topic-A Partition 2 | Topic-A Partition 1 |
+| Topic-B Partition 1 | Topic-B Partition 0 |                     |
+
+- **Note**: Data is distributed and Broker 103 does not have any Topic B data
+
+### Topic replication factor
