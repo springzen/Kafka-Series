@@ -44,4 +44,27 @@
 
 - **Note**: Data is distributed and Broker 103 does not have any Topic B data
 
-### Topic replication factor
+##### Topic replication factor
+
+- topics should have a replication factor > 1 (usually between 2 and 3)
+- replication factor gold standard is 3 while two is a bit risky
+- this way if a broker is down, another broker can serve the data
+- example: Topic-A with two partitions and replication factor of two
+
+| Broker 101          |         Broker 102        |                Broker 103 |
+|---------------------|:-------------------------:|--------------------------:|
+| Partition-0 Topic-A | Partition 1 Topic-A       | Repl: Partition 1 Topic-A |
+|                     | Repl: Partition 0 Topic-A |                           |
+
+```puml
+Broker_101 -> Broker_101 
+
+```
+
+
+- if we lose Broker 102
+- broker 101 and 103 can still serve the data
+
+##### Concept of Leader for a Partition
+
+-
