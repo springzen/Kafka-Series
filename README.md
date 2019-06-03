@@ -10,3 +10,6 @@ To follow this guide, follow each topic in order. Skip the topics you are alread
 
 ### Kafka Topics
 [Kafka Topics](KafkaTopics.md)
+
+### Kafka Console Producers
+[Kafka Producers](KafkaProducers.md)
