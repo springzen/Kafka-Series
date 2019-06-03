@@ -75,4 +75,4 @@ kafka-server-start.sh config/server.properties
 ```
 [2019-06-02 20:50:33,289] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)
 ```
-- if you list `data/kafka`, you will notice new files created **it's working**
+- if you list `data/kafka`, you will notice new files created -> **it's working**
