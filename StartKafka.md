@@ -1,11 +1,25 @@
 ## Install Kafka
+
 - via brew
+
 ```bash
 # Java 11 is supported as of Kafka 2.1.0
+brew top caskroom/versions
+
+# Java Install
 brew cask install java
+# if in doubt -> use Java 8
+brew cask install java8
+
+
+# Kafka
 brew install kafka
+
+# Test Kafka
+bin/kafka-topics.sh
 ```
 - or just download from https://kafka.apache.org/downloads and follow the instructions
+
 ## Starting Kafka
 
 ### Start Zookeeper
