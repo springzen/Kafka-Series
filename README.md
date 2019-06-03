@@ -9,4 +9,4 @@ To follow this guide, follow each topic in order. Skip the topics you are alread
 [Kafka Start](KafkaStart.md)
 
 ### Kafka Topics
-[Kafka Topics](KafkaTopics)
+[Kafka Topics](KafkaTopics.md)
