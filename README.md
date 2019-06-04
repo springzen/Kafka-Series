@@ -13,3 +13,6 @@ To follow this guide, follow each topic in order. Skip the topics you are alread
 
 ### Kafka Console Producers
 [Kafka Producers](KafkaProducers.md)
+
+### Kafka Consumers and Groups
+[Kafka Consumers](KafkaConsumes.md)
