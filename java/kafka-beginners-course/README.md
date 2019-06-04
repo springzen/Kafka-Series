@@ -45,7 +45,7 @@ mvn archetype:generate -DgroupId=com.springzen-DartifactId=kafka-beginners-cours
 
 ```
 
-3. Define a simple Producer
+4. Define a simple Producer
 
 ```java
 public class ProducerDemo {
@@ -89,3 +89,5 @@ public class ProducerDemo {
     }
 }
 ```
+
+#### Welcome to Kafka
