@@ -90,4 +90,9 @@ public class ProducerDemo {
 }
 ```
 
-#### Welcome to Kafka
+#### Welcome to Kafka via Java
+
+## Notes on the project
+
+1. It uses [Project Lombok](https://projectlombok.org/)
+2. Second example `ProducerDemoWithCallback` uses [Lambda syntax](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
