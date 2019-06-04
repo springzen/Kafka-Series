@@ -16,3 +16,6 @@ To follow this guide, follow each topic in order. Skip the topics you are alread
 
 ### Kafka Consumers and Groups
 [Kafka Consumers](KafkaConsumers.md)
+
+### First Java Project
+[First Java](java/kafka-beginners-course)
