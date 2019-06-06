@@ -7,26 +7,42 @@
     <groupId>com.springzen</groupId>
     <artifactId>kafka-beginners-course</artifactId>
     <version>1.0</version>
+
+    <properties>
+        <kafka-clients.version>2.2.0</kafka-clients.version>
+        <slf4j-simple.version>1.7.26</slf4j-simple.version>
+        <hbc-core.version>2.2.0</hbc-core.version>
+        <lombok.version>1.18.8</lombok.version>
+    </properties>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
-            <version>2.2.0</version>
+            <version>${kafka-clients.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.26</version>
+            <version>${slf4j-simple.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.twitter/hbc-core -->
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>hbc-core</artifactId>
+            <version>${hbc-core.version}</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
+            <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
 

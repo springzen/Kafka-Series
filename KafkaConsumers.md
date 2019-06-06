@@ -9,6 +9,8 @@
 ```bash
 # Remember we set our bootstrap server into an environment variable named KAFKA
 kafka-console-consumer.sh --bootstrap-server $KAFKA -topic first_topic
+
+kafka-console-consumer.sh --bootstrap-server $KAFKA --topic twitter_tweets
 ```
 - you will notice that the consumer does not read all the topics prior to its launch
 - the console consumer will only read topics after it was launched and will only intercept new messages

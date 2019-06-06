@@ -1,5 +1,6 @@
 package com.springzen.kafka.tutorial1;
 
+import com.springzen.kafka.common.CloseableUtil;
 import com.springzen.kafka.common.KafkaConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -14,6 +15,7 @@ import java.util.Collections;
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 
+import static com.springzen.kafka.common.CloseableUtil.close;
 import static org.apache.kafka.clients.consumer.ConsumerConfig.*;
 
 @Slf4j
@@ -118,14 +120,6 @@ public class ConsumerDemoWithThreads {
             // wakeup method interrupts consumer.poll()
             // throw WakeUpException
             consumer.wakeup();
-        }
-
-        private void close(Closeable closeable) {
-            try {
-                closeable.close();
-            } catch (Exception e) {
-                log.debug(e.getMessage(), e);
-            }
         }
     }
 

@@ -36,6 +36,9 @@
 ```bash
 # # success
 `kafka-topics.sh --zookeeper $ZOO --topic first_topic --create --partitions 3 --replication-factor 1`
+
+# create this for our Java twitter code
+`kafka-topics.sh --zookeeper $ZOO --topic twitter_tweets --create --partitions 6 --replication-factor 1
 ```
 - `Created topic first_topic.`
 
