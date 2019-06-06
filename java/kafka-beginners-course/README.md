@@ -96,3 +96,13 @@ public class ProducerDemo {
 
 1. It uses [Project Lombok](https://projectlombok.org/)
 2. Second example `ProducerDemoWithCallback` uses [Lambda syntax](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
+3. If you want to setup your twitter integration
+ - Make sure you create a developer account at [Twitter Developer](https://developer.twitter.com/)
+ - create a local properties file with your twitter secrets. The file is by default located at `~/work/dev/twitter/ts.properties`
+    ```properties
+    consumerKey=<consumerKey>
+    consumerSecret=<consumerSecret>
+    token=<token>
+    secret=<secret>
+    
+    ```
