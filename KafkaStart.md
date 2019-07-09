@@ -44,6 +44,10 @@ bin/kafka-topics.sh
 ## Your path may differ
 export PATH="$PATH:$HOME/work/tools/kafka/kafka_2.12-2.2.0/bin"
 export KAFKA_HOME="$HOME/work/tools/kafka/kafka_2.12-2.2.0"
+
+## On macOS if you are installing through brew
+export KAFKA_HOME=/usr/local/bin
+export KAFKA_CONFIG=/usr/local/etc/kafka
 ```
 
 - if you see a message similar to the one below, you are good to go
@@ -51,6 +55,9 @@ export KAFKA_HOME="$HOME/work/tools/kafka/kafka_2.12-2.2.0"
 - if this is already bound, you can change it
 ```bash
 vi $KAFKA_HOME/config/zookeeper.properties
+
+# brew
+vi $KAFKA_CONFIG/zookeeper.properties
 ```
 - change the default to whatever works for you
 ```properties
@@ -63,6 +70,9 @@ clientPort=2181
 - now start Zookeeper
 ```bash
 zookeeper-server-start.sh $KAFKA_HOME/config/zookeeper.properties
+
+# brew
+zookeeper-server-start $KAFKA_CONFIG/zookeeper.properties
 ```
 - while you are in `zookeeper.properties`, change the data directory which is bound to the `tmp` directory
 ```properties
@@ -84,9 +94,13 @@ log.dirs=/tmp/kafka-logs
 - Kafka need to reference `server.properties` - this is located at `$KAFKA_HOME/config`
 ```bash
 kafka-server-start.sh config/server.properties
+
+# brew
+kafka-server-start $KAFKA_CONFIG/server.properties
 ```
 - what success looks like -> look for `[KafkaServer id=0]` in the console log
 ```
 [2019-06-02 20:50:33,289] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)
 ```
 - if you list `data/kafka`, you will notice new files created -> **it's working**
+- on `brew` installs check `log.dirs` on vi $KAFKA_CONFIG/server.properties
