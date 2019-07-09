@@ -78,6 +78,9 @@ zookeeper-server-start $KAFKA_CONFIG/zookeeper.properties
 ```properties
 # the directory where the snapshot is stored. Change it to a better home
 dataDir=/tmp/zookeeper
+
+# on brew installs
+dataDir=/usr/local/var/lib/zookeeper
 ```
 - to ensure the new home is used, if you list the directory, directory named `version-2` should be listed
 - do the same for Kafka, change the `data` directory
