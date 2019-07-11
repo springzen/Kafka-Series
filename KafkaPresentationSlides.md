@@ -131,9 +131,9 @@ So, we can say that message brokers can do 4 important things:
 ---
 
 # Kafka working principle
-There are 2 main patterns of messaging:
-queuing
-publish-subscribe
+* There are 2 main patterns of messaging:
+  * queuing
+  * publish-subscribe
 
 ---
 
