@@ -242,8 +242,6 @@ Ref: [The Kafka API Battle: Producer vs Consumer vs Kafka Connect vs Kafka Strea
 ---
 
 # Hands-on Kafka
-Which component can benefit from Kafka
-
 
 ---
 
