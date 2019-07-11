@@ -16,7 +16,7 @@ kafka-console-consumer.sh --bootstrap-server $KAFKA --topic twitter_tweets
 - the console consumer will only read topics after it was launched and will only intercept new messages
 - lets look at the interaction between the producer and consumer
 
-![Kafka Producer Consumer](KafkaProducerConsumerMessages.png)
+![Kafka Producer Consumer](images/KafkaProducerConsumerMessages.png)
 
 #### How to consume all the topics
 
