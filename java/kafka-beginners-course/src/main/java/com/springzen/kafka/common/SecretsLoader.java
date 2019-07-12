@@ -7,9 +7,21 @@ import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.Properties;
 
+
 public class SecretsLoader {
     public static TwitterSecrets loadTwitterAPiSecrets(String twitterSecretsFile) {
         try (InputStream input = new FileInputStream(twitterSecretsFile)) {
+
+            /*
+                - get your credentials from https://developer.twitter.com/
+                -- https://developer.twitter.com/en/apps
+                - sample twitter secrets properties file
+                consumerKey=<your_consumer_key>
+                consumerSecret=<your_consumer_secret>
+                token=<your_token>
+                secret=<your_secret>
+
+             */
 
 
             Properties appProps = new Properties();
