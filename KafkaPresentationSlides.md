@@ -114,7 +114,7 @@ So, we can say that message brokers can do 4 important things:
 # Kafka is able to:
 1. publish and subscribe to streams of records with excellent scalability and performance, which makes it suitable for company-wide use.
 2. durably store the streams, distributing data across multiple nodes for a highly available deployment.
-3. process data streams as they arrive, allowing you aggregating, creating windowing parameters, performing joins of data within a stream, etc.
+3. process data streams as they arrive, provide ways to aggregate messages, perform joins of data within a stream, etc.
 
 ---
 
@@ -138,7 +138,7 @@ So, we can say that message brokers can do 4 important things:
 ---
 
 ## Kafka Message Delivery Semantics
-[Message Delivery Semantivcs](https://kafka.apache.org/documentation/#semantics)
+[Message Delivery Semantics](https://kafka.apache.org/documentation/#semantics)
 
 Kafka offers various ways to deliver messages.
 - at least once semantics
