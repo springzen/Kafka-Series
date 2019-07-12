@@ -63,7 +63,8 @@ Kafka broker generalization
 
 1. If you want to control data feeds. For example, the number of registrations in any system.
 2. When the task is to put data to several applications and avoid direct usage of their API.
-3. The necessity to complete processes in a defined order like a transactional system.
+3. The necessity to complete processes in a defined order like a transactional system. See: [Pattern: Saga
+](https://microservices.io/patterns/data/saga.html)
 
 >Ref: [Introduction to Message Brokers: Part 1: Apache Kafka vs RabbitMQ](https://hackernoon.com/introduction-to-message-brokers-part-1-apache-kafka-vs-rabbitmq-8fd67bf68566)
 
