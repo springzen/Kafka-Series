@@ -4,7 +4,7 @@ _Based on Stephane Maarek: Apache Kafka Series - Learn Apache Kafka for Beginner
 ### Topics, partitions and offsets
 
 #### Topics
-- similar to a table in a database (without al the constraints)
+- similar to a table in a database (without all the constraints)
 - you can have as many topics as you'd like
 - a topic is identified by its name
 - topics are split into partitions
