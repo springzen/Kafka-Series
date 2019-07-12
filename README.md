@@ -2,8 +2,11 @@
 
 To follow this guide, follow each topic in order. Skip the topics you are already familiar with.
 
+### Presentation slides
+[Kafka Presentation Slides](KafkaPresentationSlides.md)
+
 ### Kafka basics
-[KafkaBasics.md](KafkaBasics.md)
+[Kafka Basics](KafkaBasics.md)
 
 ### Kafka Start
 [Kafka Start](KafkaStart.md)

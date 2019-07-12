@@ -107,3 +107,9 @@ kafka-server-start $KAFKA_CONFIG/server.properties
 ```
 - if you list `data/kafka`, you will notice new files created -> **it's working**
 - on `brew` installs check `log.dirs` on vi $KAFKA_CONFIG/server.properties
+
+### Convenience variables
+```bash
+export ZOO=127.0.0.1:2181
+export KAFKA=127.0.0.1:9092
+```

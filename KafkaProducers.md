@@ -1,11 +1,20 @@
 ## CLI Producers
 
+**Note** If you've installed Kafka via a package manager, remove the `.sh` extension from all commands
+
+### Convenience variables
+```bash
+export ZOO=127.0.0.1:2181
+export KAFKA=127.0.0.1:9092
+```
+
 - console producers are created via `kafka-console-producer.sh`
 - The first thing we need to specify is the `--broker-list` and the `--topic`
 - since we will be referencing local host Kafka a lot, `export KAFKA=127.0.0.1:9092`
 
 ### Sending our first messages
 - `kafka-console-producer.sh --broker-list $KAFKA --topic first_topic`
+
 
 ```
 >Hello world

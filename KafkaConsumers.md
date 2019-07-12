@@ -1,5 +1,13 @@
 ## Kafka Console Consumer
 
+**Note** If you've installed Kafka via a package manager, remove the `.sh` extension from all commands
+
+### Convenience variables
+```bash
+export ZOO=127.0.0.1:2181
+export KAFKA=127.0.0.1:9092
+```
+
 ### Consuming topics
 
 - the command for this is `kafka-console-consumer.sh`
