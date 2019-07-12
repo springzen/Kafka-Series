@@ -117,7 +117,7 @@ public class TwitterProducer {
          **/
 
         /*
-         * Follow Kafka
+         * topic to follow
          **/
         List<String> terms = Lists.newArrayList("bitcoin");
 
