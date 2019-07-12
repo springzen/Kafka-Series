@@ -204,13 +204,6 @@ Ref: [The Kafka API Battle: Producer vs Consumer vs Kafka Connect vs Kafka Strea
 
 ---
 
-## Why the need for Kafka
-
-* replication and fault tolerance by default
-* millions of messages per second
-
----
-
 ## Kafka: For Developers -> implementations
 
 * Java developers can integrate with Kafka through [Spring-Kafka](https://spring.io/projects/spring-kafka)
