@@ -201,21 +201,31 @@ Ref: [The Kafka API Battle: Producer vs Consumer vs Kafka Connect vs Kafka Strea
 
 * replication and fault tolerance by default
 * millions of messages per second
-* Developers
-  * Java developers can integrate with Kafka through [Spring-Kafka](https://spring.io/projects/spring-kafka)
-  * Ruby developers can integrate with Kafka through [Karafka](https://github.com/karafka/karafka) or [ruby-kafka
-](https://github.com/zendesk/ruby-kafka)
-  * decoupling -> eliminating tightly coupled implementations
-  * language agnostic messaging
-  * not requiring to have all things to be running at the same time
-  * the interface to data is done via Kafka and not via APIs and databases
-* For the organization
-  * deal with large datasets by moving away from batch jobs
-  * ability  to run on premise or in the cloud
-  * runs on the JVM (platform independence)
-  * runs on inexpensive hardware
-  * can run on a single node cluster
 
+---
+
+## Why the need for Kafka
+
+* replication and fault tolerance by default
+* millions of messages per second
+
+---
+
+## Kafka: For Developers -> implementations
+
+* Java developers can integrate with Kafka through [Spring-Kafka](https://spring.io/projects/spring-kafka)
+* Ruby developers can integrate with Kafka through [Karafka](https://github.com/karafka/karafka) or [ruby-kafka
+](https://github.com/zendesk/ruby-kafka)
+
+---
+
+## Kafka: For the organization
+
+* deal with large datasets by moving away from batch jobs
+* ability  to run on premise or in the cloud
+* runs on the JVM (platform independence)
+* runs on inexpensive hardware
+* can run on a single node cluster
 
 ---
 # Kafka books
