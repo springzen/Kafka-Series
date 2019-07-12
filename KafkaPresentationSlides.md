@@ -212,6 +212,15 @@ Ref: [The Kafka API Battle: Producer vs Consumer vs Kafka Connect vs Kafka Strea
 
 ---
 
+## Kafka: For Developers -> architecture
+
+* decoupling -> eliminating tightly coupled implementations
+* language agnostic messaging
+* not requiring to have all things to be running at the same time
+* the interface to data is done via Kafka and not via APIs and databases
+
+---
+
 ## Kafka: For the organization
 
 * deal with large datasets by moving away from batch jobs
