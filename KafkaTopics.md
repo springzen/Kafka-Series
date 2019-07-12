@@ -62,6 +62,12 @@ kafka-topics.sh --zookeeper $ZOO --topic twitter_tweets --create --partitions 6 
 
 # binary
 kafka-topics --zookeeper $ZOO --topic twitter_tweets --create --partitions 6 --replication-factor 1
+
+# listen for twitter messages
+kafka-console-consumer.sh --bootstrap-server $KAFKA --topic twitter_tweets
+
+# binary
+kafka-console-consumer --bootstrap-server $KAFKA --topic twitter_tweets
 ```
 - `Created topic first_topic.`
 
