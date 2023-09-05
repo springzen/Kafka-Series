@@ -9,7 +9,7 @@
     <version>1.0</version>
 
     <properties>
-        <kafka-clients.version>2.2.0</kafka-clients.version>
+        <kafka-clients.version>2.6.3</kafka-clients.version>
         <slf4j-simple.version>1.7.26</slf4j-simple.version>
         <hbc-core.version>2.2.0</hbc-core.version>
         <lombok.version>1.18.8</lombok.version>
